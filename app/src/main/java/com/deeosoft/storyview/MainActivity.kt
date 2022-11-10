@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.view.WindowCompat
-import com.deeosoft.storyview.custom.OnStoryActionListener
+import deeosoft.library.OnStoryActionListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), OnStoryActionListener, View.OnTouchListener {

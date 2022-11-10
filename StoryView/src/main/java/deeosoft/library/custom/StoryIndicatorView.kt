@@ -1,10 +1,10 @@
-package com.deeosoft.storyview.custom
+package deeosoft.library.custom
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.ProgressBar
-import com.deeosoft.storyview.R
+import deeosoft.library.R
 
 @SuppressLint("UseCompatLoadingForDrawables")
 class StoryIndicatorView(context: Context, attributeSet: AttributeSet): ProgressBar(context, attributeSet, android.R.attr.progressBarStyleHorizontal) {

@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="StoryView/src/main/res/drawable/story_progress_indicator.xml" value="0.1" />
+        <entry key="StoryView/src/main/res/layout/default_layout.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/story_progress_indicator.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/story_progress_indicator_2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />

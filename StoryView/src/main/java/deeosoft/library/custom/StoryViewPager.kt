@@ -1,4 +1,4 @@
-package com.deeosoft.storyview.custom
+package deeosoft.library.custom
 
 import android.annotation.SuppressLint
 import android.content.Context

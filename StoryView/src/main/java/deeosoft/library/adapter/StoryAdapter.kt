@@ -1,4 +1,4 @@
-package com.deeosoft.storyview.adapter
+package deeosoft.library.adapter
 
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment

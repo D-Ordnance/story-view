@@ -1,4 +1,4 @@
-package com.deeosoft.storyview.custom
+package deeosoft.library
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,8 +13,9 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager.widget.ViewPager
-import com.deeosoft.storyview.R
-import com.deeosoft.storyview.adapter.StoryAdapter
+import deeosoft.library.adapter.StoryAdapter
+import deeosoft.library.custom.StoryIndicatorView
+import deeosoft.library.custom.StoryViewPager
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
