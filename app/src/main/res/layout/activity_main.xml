@@ -6,4 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.deeosoft.storyview.custom.StoryView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:storyIndicatorViewMarginEnd="12dp"
+        app:storyLayoutMarginLeft="22dp"
+        app:storyIndicatorViewHeight="6dp"
+        app:storyLayoutMarginRight="22dp"
+        app:storyLayoutMarginTop="150dp"
+        app:storyFragments="@array/fragments"
+        app:storyIndicatorViewProgressDrawable="@drawable/story_progress_indicator_2"
+        app:storyIndicatorViewDelay="10"
+        android:id="@+id/storyView"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/healthInsuranceStoryToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Story View"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

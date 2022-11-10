@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StoryView">
+        <attr name="storyFragments" format="reference"/>
+        <attr name="storyIndicatorViewProgressDrawable" format="reference"/>
+        <attr name="storyLayoutMarginLeft" format="dimension"/>
+        <attr name="storyLayoutMarginRight" format="dimension"/>
+        <attr name="storyLayoutMarginTop" format="dimension"/>
+        <attr name="storyIndicatorViewHeight" format="dimension"/>
+        <attr name="storyIndicatorViewMarginEnd" format="dimension"/>
+        <attr name="storyIndicatorViewDelay" format="integer"/>
+    </declare-styleable>
+</resources>
