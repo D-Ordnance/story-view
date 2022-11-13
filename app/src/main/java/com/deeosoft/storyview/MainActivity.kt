@@ -9,12 +9,18 @@ import androidx.core.view.WindowCompat
 import deeosoft.library.OnStoryActionListener
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), OnStoryActionListener, View.OnTouchListener {
+class MainActivity :
+    AppCompatActivity(),
+    OnStoryActionListener,
+    View.OnTouchListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        healthInsuranceStoryToolBar.setOnClickListener {
+            storyView.nextItemInStory()
+        }
         storyView.setStoryActionListener(this)
         storyView.setOnTouchListener(this)
     }

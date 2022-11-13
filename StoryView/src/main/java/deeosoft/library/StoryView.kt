@@ -27,7 +27,7 @@ import kotlin.properties.Delegates
 
 @SuppressLint("UseCompatLoadingForDrawables")
 class StoryView (context: Context, attributeSet: AttributeSet):
-    FrameLayout(context, attributeSet) {
+    FrameLayout(context, attributeSet){
     private var currentPage = 0
     private var storyProgressTimer = 0
     private var delay by Delegates.notNull<Long>()
@@ -114,7 +114,7 @@ class StoryView (context: Context, attributeSet: AttributeSet):
                 positionOffset: Float,
                 positionOffsetPixels: Int
             ) {
-                println("do something ..")
+
             }
 
             override fun onPageSelected(position: Int) {
@@ -128,27 +128,18 @@ class StoryView (context: Context, attributeSet: AttributeSet):
             }
 
             override fun onPageScrollStateChanged(state: Int) {
-                /*if(state == ViewPager.SCROLL_STATE_IDLE){
-                    determineStoryProgressOnScrollStateChanged(currentPage)
-                    context.lifecycleScope.launch {
-                        job.cancelAndJoin()
-                        storyProgressTimer = 0
-                        getEmittedValues(true)
-                    }
-                }*/
+
             }
 
         })
     }
 
     private fun determineStoryProgressOnScrollStateChanged(position: Int){
-        if(position != 0){
-            for(i in 0 until storyIndicatorLayout.childCount - 1){
-                if(position > i){
-                    (storyIndicatorLayout.getChildAt(i) as ProgressBar).progress = 100
-                }else{
-                    (storyIndicatorLayout.getChildAt(i) as ProgressBar).progress = 0
-                }
+        for(i in 0 until storyIndicatorLayout.childCount){
+            if(position > i){
+                (storyIndicatorLayout.getChildAt(i) as ProgressBar).progress = 100
+            }else{
+                (storyIndicatorLayout.getChildAt(i) as ProgressBar).progress = 0
             }
         }
     }
@@ -158,7 +149,7 @@ class StoryView (context: Context, attributeSet: AttributeSet):
             emit(storyProgressTimer++)
         }
     }
-    private suspend fun getEmittedValues(continueStoryProgress: Boolean){
+    private fun getEmittedValues(continueStoryProgress: Boolean){
         job = (context as AppCompatActivity).lifecycleScope.launchWhenStarted {
             storyWithKotlinFlow(continueStoryProgress).collect{
                 (storyIndicatorLayout.getChildAt(currentPage) as ProgressBar).progress = it
@@ -172,13 +163,16 @@ class StoryView (context: Context, attributeSet: AttributeSet):
         (context as AppCompatActivity).runOnUiThread {
             // I would use the strategy - factory decide pattern here to determine which
             // function to invoke base on the position.
-            determineMoveToNextAction(fragmentType)?.invoke()
+            determineStoryNextActionFromState(fragmentType)?.invoke()
         }
     }
     private fun determineStoryStateFromPosition(position: Int): StoryState {
-        return if(position == fragmentSize - 1) StoryState.DONE else StoryState.PROCESSING
+        return when {
+            position >= fragmentSize - 1 -> StoryState.DONE
+            else -> StoryState.PROCESSING
+        }
     }
-    private fun determineMoveToNextAction(position: Int): (() -> Unit)? {
+    private fun determineStoryNextActionFromState(position: Int): (() -> Unit)? {
         val nextActionUseCase = HashMap<StoryState, (() -> Unit)>()
         nextActionUseCase[StoryState.PROCESSING] = {processNextStoryMovementAction(position)}
         nextActionUseCase[StoryState.DONE] = {doneWithStory()}
@@ -194,6 +188,12 @@ class StoryView (context: Context, attributeSet: AttributeSet):
 
     fun setStoryActionListener(listener: OnStoryActionListener){
         this.listener = listener
+    }
+    fun previousItemInStory(){
+        if (currentPage != 0)moveToNextFragment(currentPage - 2)
+    }
+    fun nextItemInStory(){
+        moveToNextFragment(currentPage)
     }
     fun pauseStory(){
         (context as AppCompatActivity).lifecycleScope.launch {
