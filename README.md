@@ -1,7 +1,7 @@
 # StoryView
 StoryView aar is to be used by developers who needs to add story like views to their application.
-Design using kotlin lifecycle scope and flow
-I used kotlin coroutine as to threads because it was easier to track and cancel jobs compared cancelling threads.
+Designed using kotlin lifecycle scope and flow
+I used kotlin coroutine as oppose to threads because it is easier to track and cancel jobs as oppose to cancelling threads.
 
 [![](https://jitpack.io/v/D-Ordnance/story-view.svg)](https://jitpack.io/#D-Ordnance/story-view)
 This version does not supports videos yet,
