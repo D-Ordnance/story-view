@@ -5,7 +5,7 @@ I used kotlin coroutine as oppose to threads because it is easier to track and c
 
 [![](https://jitpack.io/v/D-Ordnance/story-view.svg)](https://jitpack.io/#D-Ordnance/story-view)
 This version does not supports videos yet,
-as it is in progress and would be release in the nearest future.
+as it is in progress and would be released in the nearest future.
 
 ## Table of Content
 - How to install
