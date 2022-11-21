@@ -1,5 +1,5 @@
 # StoryView
-StoryView aar is to be used by developers who needs to add story like views to their application.
+StoryView aar is to be used by developers who need to add story like views to their applications.
 Designed using kotlin lifecycle scope and flow
 I used kotlin coroutine as oppose to threads because it is easier to track and cancel jobs as oppose to cancelling threads.
 
