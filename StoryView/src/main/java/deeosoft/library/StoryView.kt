@@ -207,33 +207,6 @@ class StoryView (context: Context, attributeSet: AttributeSet):
             getEmittedValues(true)
         }
     }
-    /*fun setUp(fragment: List<Int>){
-        fragmentSize = fragment.size
-        for(i in 0 until fragmentSize) {
-            val storyProgressIndicator =
-                StoryIndicatorView(context)
-            val storyIndicatorLayoutParams = LinearLayout.LayoutParams(0, storyIndicatorHeight)
-            storyIndicatorLayoutParams.weight = 1/fragmentSize.toFloat()
-            if(i != fragmentSize - 1)storyIndicatorLayoutParams.marginEnd = storyIndicatorMarginEnd
-            storyProgressIndicator.layoutParams = storyIndicatorLayoutParams
-            storyIndicatorLayout.addView(storyProgressIndicator)
-        }
-
-        viewPager.id = View.generateViewId()
-        viewPager.background = context.resources.getDrawable(R.color.teal_200, null)
-        val viewPagerParams = RelativeLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT)
-        viewPagerParams.addRule(RelativeLayout.ALIGN_PARENT_TOP)
-        viewPagerParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
-        outerLayout.addView(viewPager, viewPagerParams)
-        addView(outerLayout)
-
-        val storyIndicatorLayoutParams = RelativeLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
-        storyIndicatorLayoutParams.setMargins(marginLeft,marginTop,marginRight,0)
-        storyIndicatorLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP)
-        outerLayout.addView(storyIndicatorLayout, storyIndicatorLayoutParams)
-
-        viewPager.adapter = StoryAdapter((context as AppCompatActivity).supportFragmentManager, fragment)
-    }*/
     fun startStory(){
         try {
             if (fragmentSize != 0) {
